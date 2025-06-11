@@ -9,7 +9,6 @@ import java.util.List;
 //metody: <countVowels - metoda liczy samogłoski w tekście i zwraca liczbę samogłosek>
 //        <deleteDuplicatesFromText - metoda usuwa powtórzenia znaków występujących obok
 //        siebie i zwraca tekst (typu String) bez tych powtórzeń>
-//autor: <00000000>
 //************************************************
 
 public class StringTools {
