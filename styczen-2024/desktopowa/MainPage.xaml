@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PssportApp.MainPage"
+             Title="Wprowadzenie danych do paszportu">
+
+    <Grid RowDefinitions="*, *"
+          ColumnDefinitions="*, *"
+          BackgroundColor="#5F9EA0"
+          Padding="30">
+
+        <VerticalStackLayout Grid.Row="0"
+                             Grid.Column="0">
+            <Grid RowDefinitions="*, *, *"
+                  ColumnDefinitions="*, *">
+
+                <Label Text="Numer" 
+                       Padding="10"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Entry x:Name="numberEntry" 
+                       WidthRequest="200"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Background="Azure"
+                       Margin="10"
+                       TextChanged="OnNumberChanged"
+                       TextColor="Black"/>
+
+
+                <Label Text="Imię" 
+                       Padding="10"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Entry x:Name="nameEntry"
+                       WidthRequest="200"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Background="Azure"
+                       Margin="10"
+                       TextColor="Black"/>
+
+
+                <Label Text="Nazwisko"
+                       Padding="10"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"/>
+
+                <Entry x:Name="surnameEntry"
+                       WidthRequest="200"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       Background="Azure"
+                       Margin="10"
+                       TextColor="black"/>
+            </Grid>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="0">
+            <Frame BackgroundColor="#5F9EA0" 
+                   BorderColor="White">
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <RadioButton GroupName="Kolor_oczu"
+                                     x:Name="blueBtn"
+                                     IsChecked="True"/>
+                        <Label Text="niebieskie" 
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <RadioButton GroupName="Kolor_oczu" 
+                                     x:Name="greenBtn"/>
+                        <Label Text="zielone" 
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+            
+                    <HorizontalStackLayout>
+                        <RadioButton GroupName="Kolor_oczu"
+                                     x:Name="beerBtn"/>
+                        <Label Text="piwne" 
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+            </Frame>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="0"
+                             Grid.RowSpan="2"
+                             Grid.Column="1">
+            <HorizontalStackLayout Spacing="80"
+                                   HorizontalOptions="Center">
+                <Image x:Name="faceImage" 
+                       HeightRequest="250"/>
+                
+                <Image x:Name="handImage"  
+                       HeightRequest="250"/>
+            </HorizontalStackLayout>
+
+            <Button BackgroundColor="Azure"
+                    WidthRequest="300"
+                    Margin="40"
+                    Text="OK"
+                    Clicked="OnButtonClicked"
+                    CornerRadius="0"/>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
