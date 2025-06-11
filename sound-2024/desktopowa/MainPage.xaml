@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesktopowaApk.MainPage"
+             Title="MojeDźwięki">
+
+    <Grid RowDefinitions="*, *"
+          ColumnDefinitions="Auto, *, Auto"
+          BackgroundColor="SeaGreen">
+        <ImageButton Grid.Row="0" 
+                     Grid.Column="0"
+                     Source="obraz3.png"
+                     HeightRequest="70"
+                     Margin="50, 90, 50, 0"
+                     Clicked="OnPreviousAlbumClicked"/>
+        <ImageButton Grid.Row="0" 
+                     Grid.Column="2"
+                     Source="obraz2.png"
+                     HeightRequest="70"
+                     Margin="0, 90, 50, 0"
+                     Clicked="OnNextAlbumClicked"/>
+
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="1"
+                               Spacing="40"
+                               Margin="0, 100, 0, 0">
+            <Image Source="obraz.png"/>
+            <VerticalStackLayout>
+                <Label x:Name="artistLbl" 
+                       Text="Artist"
+                       TextColor="White"
+                       FontSize="50"/>
+
+                <Label x:Name="albumLbl"
+                       Text="Album"
+                       TextColor="White"
+                       FontSize="30"
+                       FontAttributes="Italic"
+                       Margin="0, 10, 0, 0"/>
+
+                <HorizontalStackLayout Spacing="40"
+                                       Margin="0, 20, 0, 0">
+                    <Label x:Name="songsNumberLbl"
+                           Text="Songs number"
+                           TextColor="#61D918"
+                           FontSize="20"/>
+
+                    <Label x:Name="yearLbl"
+                           Text="Year"
+                           TextColor="#61D918"
+                           FontSize="20"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <StackLayout Grid.Row="1" 
+                    Grid.Column="1" 
+                     Margin="0, 20, 0, 0">
+            <Grid ColumnDefinitions="*, *"
+                  RowDefinitions="*, *">
+                <Label x:Name="numberOfDownloadsLbl"
+                       Text="Num of downloads"
+                       TextColor="#61D918"
+                       FontSize="20"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       VerticalOptions="Center"/>
+                <Button Text="Pobierz"
+                        TextColor="Black"
+                        BackgroundColor="#61D918"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HeightRequest="20"
+                        CornerRadius="0"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Margin="0, 0, 150, 0"
+                        HorizontalOptions="Center"
+                        Clicked="OnDownLoadButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
